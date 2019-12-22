@@ -22,7 +22,7 @@ RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, floa
 
 float RoutePlanner::CalculateHValue(RouteModel::Node const *node)
 {
-    return node -> distance(*end_node);
+    return node->distance(*end_node);
 }
 
 // TODO 4: Complete the AddNeighbors method to expand the current node by adding all unvisited neighbors to the open list.
@@ -34,6 +34,16 @@ float RoutePlanner::CalculateHValue(RouteModel::Node const *node)
 
 void RoutePlanner::AddNeighbors(RouteModel::Node *current_node)
 {
+    current_node->FindNeighbors();
+
+    for (auto neighbor : current_node->neighbors)
+    {
+        neighbor->parent = current_node;
+        neighbor->g_value = current_node->g_value + current_node->distance(*neighbor);
+        neighbor->h_value = CalculateHValue(neighbor);
+        open_list.push_back(neighbor);
+        neighbor->visited = true;
+    }
 }
 
 // TODO 5: Complete the NextNode method to sort the open list and return the next node.
