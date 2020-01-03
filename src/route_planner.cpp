@@ -96,7 +96,7 @@ void RoutePlanner::AStarSearch()
     // TODO: Implement your solution here.
     start_node->visited = true;
     open_list.push_back(start_node);
-    while (!open_list_.empty())
+    while (!open_list.empty())
     {
         if (current_node->distance(*end_node) == 0)
         {
