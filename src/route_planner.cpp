@@ -96,7 +96,6 @@ void RoutePlanner::AStarSearch()
     // TODO: Implement your solution here.
     start_node->visited = true;
     open_list.push_back(start_node);
-    RouteModel::Node *current_node = nullptr;
     while (!open_list_.empty())
     {
         if (current_node->distance(*end_node) == 0)
