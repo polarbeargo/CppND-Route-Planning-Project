@@ -1,8 +1,8 @@
 # Route Planning Project
 
-This repo contains the starter code for the Route Planning project.
+This repo contains the starter code for the Route Planning project. Route Planning Project aims to implements A* search route planner running on OpenStreetMap in C++. While calculate and draw the shortest path from point x to point y by enters two coordinates within x and y between 0 and 100, then the map is drawn using the [io2d library](https://github.com/cpp-io2d/P0267_RefImpl) and the shortest path is rendered similar as professional router planners like Google Maps.
 
-<img src="map.png" width="600" height="450" />
+<img src="res.png" width="600" height="450" />
 
 ## Cloning
 
